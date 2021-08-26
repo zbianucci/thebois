@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Build Array</title>
+  </head>
+  <body>
+    <h1>Build your own array</h1>
+    <!-- method="POST" is needed in order to call the variables in php-->
+    <form action="arrayDemo.php" method="POST">
+        <!-- name="x" is what you will call in php, so x will be referenced-->
+      Enter number of rows: <input name="rows" type="number" /><br /><br />
+      Enter number of columns:
+      <input name="columns" type="number" /><br /><br />
+      Enter minimum random value: <input name="min" type="number" /><br /><br />
+      Enter maximum random value: <input name="max" type="number" /><br /><br />
+      <input type="submit" />
+      <input type="reset" />
+    </form>
+  </body>
+</html>
