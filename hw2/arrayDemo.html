@@ -1,20 +1,52 @@
 <!DOCTYPE html>
+<!--Authors: Zach Bianucci & Abiezer De Jesus-->
 <html>
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="pragma" content="no-cache" />
   <head>
     <title>Build Array</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="images/soupLogo.png" />
   </head>
   <body>
-    <h1>Build your own array</h1>
-    <!-- method="POST" is needed in order to call the variables in php-->
-    <form action="arrayDemo.php" method="POST">
-        <!-- name="x" is what you will call in php, so x will be referenced-->
-      Enter number of rows: <input name="rows" type="number" /><br /><br />
-      Enter number of columns:
-      <input name="columns" type="number" /><br /><br />
-      Enter minimum random value: <input name="min" type="number" /><br /><br />
-      Enter maximum random value: <input name="max" type="number" /><br /><br />
-      <input type="submit" />
-      <input type="reset" />
-    </form>
+    <div class="header">
+      <div class="center"><h1>Chatta-Soup-A</h1></div>
+      <div class="center"><h2>Sweetening Your Soup Since 2021</h2></div>
+    </div>
+
+    <div class="page-wrapper">
+      <!--Start Here-->
+      <div class="center">
+          <h4>Array Builder</h4>
+        <form action="arrayDemo.php" method="POST">
+          <!-- name="x" is what you will call in php, so x will be referenced-->
+          <!-- Rows -->
+            <label for="rows">Number of Rows:</label>
+            <input type="number" name="rows" placeholder="Rows..." />
+
+          <!-- Columns -->
+            <label for="columns">Number of Columns:</label>
+            <input type="number" name="columns" placeholder="Columns..." />
+
+          <!-- Random Value Min -->
+            <label for="min">Minimum Random Value:</label>
+            <input type="number" name="min" placeholder="Minimum..." />
+
+          <!-- Random Value Max -->
+            <label for="max">Maximum Random Value:</label>
+            <input type="number" name="max" placeholder="Maximum..." />
+
+          <!--Submit and Reset Buttons-->
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
