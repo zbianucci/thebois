@@ -103,8 +103,6 @@
     //End of domain names
 
     //Arrays: $first_names_array, $last_names_array, $street_names_array, $street_types_array, $domains_array
-    //Copied and changed the code for our table from hw2
-
     //Table headers
     echo "<table><tr>
     <th>First Name</th>
@@ -112,9 +110,9 @@
     <th>Address</th>
     <th>Email</th></tr>";
 
-    //table contents
     $customers = fopen("customers.txt", "w");
-    for ($i = 0; $i < 25; $i++) {
+    for ($i = 0; $i < count($first_names_array); $i++) {
+        //table and file contents
         $fname = $first_names_array[$i];
         $lname = $last_names_array[$i];
         $address = ($i+1).rand(1,99)." ".$street_names_array[$i]." ".$street_types_array[rand(0,count($street_types_array)-1)];
@@ -131,8 +129,6 @@
         <td>".$email."</td>
         </tr>";
         }
-
-    
 
     fclose($customers);
     echo "</table>";
