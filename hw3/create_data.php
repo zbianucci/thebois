@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Your Array</title>
+    <title>Your Array</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Chatta-Soup-A</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <?php
 
@@ -109,26 +111,31 @@
     <th>Last Name</th>
     <th>Address</th>
     <th>Email</th></tr>";
-
+    $full_names_array = array();
     $customers = fopen("customers.txt", "w");
     for ($i = 0; $i < count($first_names_array); $i++) {
         //table and file contents
-        $fname = $first_names_array[$i];
-        $lname = $last_names_array[$i];
-        $address = ($i+1).rand(1,99)." ".$street_names_array[$i]." ".$street_types_array[rand(0,count($street_types_array)-1)];
-        $email = $first_names_array[$i].".".$last_names_array[$i]."@".$domains_array[rand(0,count($domains_array)-1)];
-        
+        $fname;
+        $lname;
+        do {
+            $fname = $first_names_array[rand(0, count($first_names_array) - 1)];
+            $lname = $last_names_array[rand(0, count($last_names_array) - 1)];
+            $address = ($i + 1) . rand(1, 99) . " " . $street_names_array[$i] . " " . $street_types_array[rand(0, count($street_types_array) - 1)];
+            $email = $fname . "." . $lname . "@" . $domains_array[rand(0, count($domains_array) - 1)];
+        } while (in_array($fname . " " . $lname, $full_names_array));
+        array_push($full_names_array,$fname . " " . $lname);
+
         //output to the customers.txt file
-        fwrite($customers,$fname.":".$lname.":".$address.":".$email."\n");
+        fwrite($customers, $fname . ":" . $lname . ":" . $address . ":" . $email . "\n");
 
         //output to the table
         echo "<tr>
-        <td>".$fname."</td>
-        <td>".$lname."</td>
-        <td>".$address."</td>
-        <td>".$email."</td>
+        <td>" . $fname . "</td>
+        <td>" . $lname . "</td>
+        <td>" . $address . "</td>
+        <td>" . $email . "</td>
         </tr>";
-        }
+    }
 
     fclose($customers);
     echo "</table>";
