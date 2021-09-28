@@ -5,7 +5,6 @@
     </head>
     <body>
         <?php 
-        
         //Source: generate_data.php from Data.sql example
         function get_array_data($fileName) {
             $handle = fopen($fileName,"r");
@@ -20,7 +19,7 @@
             return $values;
         }
 
-        //Source: generage_data.php from Data.sql example
+        //Source: generate_data.php from Data.sql example
         //$handle - file handle open for writing
 		//$database - name of database to write to, as a string
 		//$table - name of the table to write to, as a string
@@ -84,7 +83,6 @@
         const NUM_ADDRESS = 150;
         const NUM_WAREHOUSE = 25;
         const NUM_PRODUCT_WAREHOUSE = 1250;
-
         /*echo "<pre>";
         print_r($street_names);
         print_r($street_types);
@@ -131,11 +129,14 @@
         for($i = 0; $i < NUM_PRODUCT; $i++) {
             $temp_product_name = $product_names[rand(0, sizeof($product_names) - 1)];
             $products[$i][0] = "'".$temp_product_name."'";
-            $prodcuts[$i][1] = "'A wonderful".$temp_product_name."for you to enjoy.'";
+            $products[$i][1] = "'A wonderful".$temp_product_name."for you to enjoy.'";
             //IMPLEMENT: weight as Decimal(6,2)
-            $products[$i][2] = "'[PLACEHOLDER]'";
+            //possibly use number_format($rand_price, 2, ".", "");
+            //the number_format below makes a number that is 6 digits long, 2 of those decimal
+            $products[$i][2] = "'".number_format(rand(101,999999)/100, 2, ".", "")."'";
             //IMPLEMENT: base_cost as Decimal(13,2)
-            $products[$i][3] = "'[PLACEHOLDER 2]'";
+            //using 101 as a boundary because it will create 1.01 as the lowest value instead of 0 or 1, which are not decimal values
+            $products[$i][3] = "'".number_format(rand(101,999999999999999)/100, 2, ".", "")."'";
         }
 
         //Warehouse
