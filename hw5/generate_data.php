@@ -115,7 +115,7 @@
             $customers[$i][1] = "'".$temp_lname."'";
             $customers[$i][2] = "'".$temp_fname.".".$temp_lname.$domains[rand(0, sizeof($domains) - 1)]."'";
             //CHECK: is this code for generating a phone number ok?
-            $customers[$i][3] = "'(".rand(100, 999).")".rand(100, 999)."-".rand(1000, 9999)."'";
+            $customers[$i][3] = "'".rand(100, 999).rand(100, 999).rand(1000, 9999)."'";
             $customers[$i][4] = "'".rand(1, NUM_ADDRESS)."'";
         }
         
@@ -136,7 +136,7 @@
             $products[$i][2] = "'".number_format(rand(101,999999)/100, 2, ".", "")."'";
             //IMPLEMENT: base_cost as Decimal(13,2)
             //using 101 as a boundary because it will create 1.01 as the lowest value instead of 0 or 1, which are not decimal values
-            $products[$i][3] = "'".number_format(rand(101,999999999999999)/100, 2, ".", "")."'";
+            $products[$i][3] = "'".number_format(rand(101,9999)/100, 2, ".", "")."'";
         }
 
         //Warehouse
@@ -149,11 +149,14 @@
         //Order_item
         for($i = 0; $i < NUM_ORDER_ITEM; $i++) {
             $temp_quantity = rand(1, 99);
+            $temp_product = rand(1, NUM_PRODUCT);
             $order_items[$i][0] = "'".rand(1, NUM_ORDER)."'";
-            $order_items[$i][1] = "'".rand(1, NUM_PRODUCT)."'";
+            $order_items[$i][1] = "'".$temp_product."'";
             $order_items[$i][2] = "'".$temp_quantity."'";
             //IMPLEMENT: how to multiply base_cost of Product table with quantity?
-            $order_items[$i][2] = "'[PLACEHOLDER 3]'";
+            $temp_cost = (double)trim($products[$temp_product-1][3], "'");
+            $price = $temp_cost * $temp_quantity;
+            $order_items[$i][3] = "'".$price."'";
         }
 
         //Product_warehouse
@@ -181,23 +184,24 @@
 
 
         //TABLE CREATION
+        $handle = fopen("data.sql", "w");
 
         //ADDRESS
-        
+        write_table($handle, "superstore", "address", $address_columns, $addresses);
         //CUSTOMER
-
+        write_table($handle, "superstore", "customer", $customer_columns, $customers);
         //ORDER
-
+        write_table($handle, "superstore", "order", $order_columns, $orders);
         //PRODUCT
-
+        write_table($handle, "superstore", "product", $product_columns, $products);
         //WAREHOUSE
-
+        write_table($handle, "superstore", "warehouse", $warehouse_columns, $warehouses);
         //ORDER_ITEM
-
+        write_table($handle, "superstore", "order_item", $order_item_columns, $order_items);
         //PRODUCT_WAREHOUSE
-
+        write_table($handle, "superstore", "product_warehouse", $product_warehouse_columns, $product_warehouses);
+        fclose($handle);
         
-
         
         
         ?>
