@@ -129,14 +129,14 @@
         for($i = 0; $i < NUM_PRODUCT; $i++) {
             $temp_product_name = $product_names[rand(0, sizeof($product_names) - 1)];
             $products[$i][0] = "'".$temp_product_name."'";
-            $products[$i][1] = "'A wonderful".$temp_product_name."for you to enjoy.'";
+            $products[$i][1] = "'A wonderful ".$temp_product_name." for you to enjoy.'";
             //IMPLEMENT: weight as Decimal(6,2)
             //possibly use number_format($rand_price, 2, ".", "");
             //the number_format below makes a number that is 6 digits long, 2 of those decimal
             $products[$i][2] = "'".number_format(rand(101,999999)/100, 2, ".", "")."'";
             //IMPLEMENT: base_cost as Decimal(13,2)
             //using 101 as a boundary because it will create 1.01 as the lowest value instead of 0 or 1, which are not decimal values
-            $products[$i][3] = "'".number_format(rand(101,9999)/100, 2, ".", "")."'";
+            $products[$i][3] = "'".number_format(rand(101,999999)/100, 2, ".", "")."'";
         }
 
         //Warehouse
@@ -165,22 +165,22 @@
             $product_warehouses[$i][1] = "'".rand(1, NUM_WAREHOUSE)."'";
         }
 
-        echo "<pre>";
-        echo "ADDRESSES";
-        print_r($addresses);
-        echo "CUSTOMERS";
-        print_r($customers);
-        echo "ORDERS";
-        print_r($orders);
-        echo "PRODUCTS";
-        print_r($products);
-        echo "WAREHOUSES";
-        print_r($warehouses);
-        echo "ORDER_ITEMS";
-        print_r($order_items);
-        echo "PRODUCT_WAREHOUSES";
-        print_r($product_warehouses);
-        echo "</pre>";
+        // echo "<pre>";
+        // echo "ADDRESSES";
+        // print_r($addresses);
+        // echo "CUSTOMERS";
+        // print_r($customers);
+        // echo "ORDERS";
+        // print_r($orders);
+        // echo "PRODUCTS";
+        // print_r($products);
+        // echo "WAREHOUSES";
+        // print_r($warehouses);
+        // echo "ORDER_ITEMS";
+        // print_r($order_items);
+        // echo "PRODUCT_WAREHOUSES";
+        // print_r($product_warehouses);
+        // echo "</pre>";
 
 
         //TABLE CREATION
