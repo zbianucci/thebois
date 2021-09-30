@@ -136,7 +136,7 @@
             $products[$i][2] = "'".number_format(rand(101,999999)/100, 2, ".", "")."'";
             //IMPLEMENT: base_cost as Decimal(13,2)
             //using 101 as a boundary because it will create 1.01 as the lowest value instead of 0 or 1, which are not decimal values
-            $products[$i][3] = "'".number_format(rand(101,9999)/100, 2, ".", "")."'";
+            $products[$i][3] = "'".number_format(rand(101,999999)/100, 2, ".", "")."'";
         }
 
         //Warehouse
