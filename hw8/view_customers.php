@@ -46,8 +46,8 @@
 
     //html table header output
     echo "<div class=\"center\"><h4>CUSTOMERS</h4></div>";
-    echo "<table><tr><th>Last Name</th>
-            <th>First Name</th>
+    echo "<table><tr><th>First Name</th>
+            <th>Last Name</th>
             <th>Address</th>
             <th>City</th>
             <th>District</th>
@@ -83,16 +83,14 @@
     }
     //table data output of the arrays
     for ($i = 0; $i < count($first_name); $i++) {
-        echo "<tr><td>" . $last_name[$i] . "</td>
-        <td>" . $first_name[$i] . "</td>
+        echo "<tr><td>" . $first_name[$i] . "</td>
+        <td>" . $last_name[$i] . "</td>
         <td>" . $address[$i] . "</td>
         <td>" . $city[$i] . "</td>
         <td>" . $district[$i] . "</td>
         <td>" . $postal_code[$i] . "</td>
         <td>" . $movies[$i] . "</td></tr>";
     }
-
-
     print("</table>");
     echo "</div>";
     $stmt->close();
