@@ -122,13 +122,13 @@ tr:hover {
   background-color: #ddd;
 }
 /*taken from w3schools and changed for use*/
-label {
+label, select {
   padding: 10px;
   text-align: left;
   font-family: "Times New Roman", Times, serif;
   font-size: 30px;
 }
-input {
+input, select{
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   width: 100%;

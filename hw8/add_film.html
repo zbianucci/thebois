@@ -17,11 +17,96 @@
   <body>
     <div class="header">
       <div class="center"><h1>Homework 8</h1></div>
-      <div class="center"><h2>Abiezer DeJesus and Zach Bianucci</h2></div>
+      <div class="center"><h2>Abiezer DeJesus & Zach Bianucci</h2></div>
     </div>
 
     <div class="page-wrapper">
       <!--Start Here-->
+      <div class="center">
+        <h4>Add Film</h4>
+        <form action="add_film.php" method="POST">
+          <!-- name="x" is what you will call in php, so x will be referenced-->
+          <!-- Title -->
+          <label for="title">Film Title:</label>
+          <input type="text" name="title" placeholder="Film Title..." />
+
+          <!-- Description -->
+          <label for="description">Description:</label>
+          <input type="text" name="description" placeholder="Description..." />
+
+          <!-- Release Year -->
+          <label for="release_year">Release Year:</label>
+          <input
+            type="number"
+            name="release_year"
+            placeholder="Release Year..."
+          />
+
+          <!-- Language ID -->
+          <label for="language_id">Language ID:</label>
+          <input
+            type="number"
+            name="language_id"
+            placeholder="Language ID..."
+          />
+
+          <!-- Rental Duration -->
+          <label for="rental_duration">Rental Duration:</label>
+          <input
+            type="number"
+            name="rental_duration"
+            placeholder="Rental Duration..."
+          />
+
+          <!-- Rental Rate -->
+          <label for="rental_rate">Rental Rate:</label>
+          <input
+            type="number"
+            name="rental_rate"
+            placeholder="Rental Rate..."
+          />
+
+          <!-- Film Length -->
+          <label for="length">Film Length:</label>
+          <input type="number" name="length" placeholder="Film Length..." />
+
+          <!-- Replacement Cost -->
+          <label for="replacement_cost">Replacement Cost:</label>
+          <input
+            type="number"
+            name="replacement_cost"
+            placeholder="Replacement Cost..."
+          />
+
+          <!-- Rating select form sampled from w3schools-->
+          <label for="rating">Rating:</label>
+          <select id="rating" name="rating" placeholder="Rating...">
+            <option value="" disabled selected>Select the Rating</option>
+            <option value="g">G</option>
+            <option value="pg">PG</option>
+            <option value="pg13">PG-13</option>
+            <option value="r">R</option>
+            <option value="nc17">NC-17</option>
+          </select>
+
+          <!-- Special Features -->
+          <label for="special_features">Special Features:</label>
+          <select id="rating" name="rating" placeholder="Rating...">
+            <option value="" disabled selected>
+              Select the Special Feature
+            </option>
+            <option value="trailers">Trailers</option>
+            <option value="commentaries">Commentaries</option>
+            <option value="deleted_scenes">Deleted Scenes</option>
+            <option value="behind_the_scenes">Behind the Scenes</option>
+          </select>
+
+          <!--Submit and Cancel Buttons-->
+          <button type="submit">Save</button>
+          
+        </form>
+        <a href="manager.html"> <button>Cancel</button></a>
+      </div>
     </div>
   </body>
 </html>
