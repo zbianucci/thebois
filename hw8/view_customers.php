@@ -78,7 +78,7 @@
             array_push($movies, $row['title']);
         } else {
             //adds each movie individually separated by a comma
-            $movies[count($movies) - 1] = $movies[count($movies) - 1] . "," . $row['title'];
+            $movies[count($movies) - 1] = $movies[count($movies) - 1] . ", " . $row['title'];
         }
     }
     //table data output of the arrays
