@@ -63,6 +63,7 @@
           <input
             type="number"
             name="rental_rate"
+            step="0.01"
             placeholder="Rental Rate..."
           />
 
@@ -75,6 +76,7 @@
           <input
             type="number"
             name="replacement_cost"
+            step="0.01"
             placeholder="Replacement Cost..."
           />
 
@@ -82,23 +84,23 @@
           <label for="rating">Rating:</label>
           <select id="rating" name="rating" placeholder="Rating...">
             <option value="" disabled selected>Select the Rating</option>
-            <option value="g">G</option>
-            <option value="pg">PG</option>
-            <option value="pg13">PG-13</option>
-            <option value="r">R</option>
-            <option value="nc17">NC-17</option>
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+            <option value="NC-17">NC-17</option>
           </select>
 
           <!-- Special Features -->
           <label for="special_features">Special Features:</label>
-          <select id="rating" name="rating" placeholder="Rating...">
+          <select id="special_features" name="special_features" placeholder="Special Features...">
             <option value="" disabled selected>
               Select the Special Feature
             </option>
-            <option value="trailers">Trailers</option>
-            <option value="commentaries">Commentaries</option>
-            <option value="deleted_scenes">Deleted Scenes</option>
-            <option value="behind_the_scenes">Behind the Scenes</option>
+            <option value="Trailers">Trailers</option>
+            <option value="Commentaries">Commentaries</option>
+            <option value="Deleted Scenes">Deleted Scenes</option>
+            <option value="Behind the Scenes">Behind the Scenes</option>
           </select>
 
           <!--Submit and Cancel Buttons-->
